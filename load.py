@@ -9,7 +9,7 @@ def load_data():
    conn = psycopg2.connect(dbname='tx_covid_2021', user='naga', host='localhost')
    cur = conn.cursor()
    
-   cur.execute('DROP TABLE IF EXISTS covid_data CASCADE;')
+   cur.execute('DROP TABLE IF EXISTS texas_covid CASCADE;')
    
    cur.execute('''
                CREATE TABLE texas_covid (

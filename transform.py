@@ -12,6 +12,7 @@ def get_raw_data():
 def clean_data(df):
    df = df.drop(columns=['_id', 'group', 'data_as_of', 'year', 'state', 'flag', 'month'])
    df = df[df.age_group != 'Not stated']
+   df = df[df.age_group != 'All Ages']
    df['covid_19_deaths'] = pd.to_numeric(df['covid_19_deaths'])
    df['number_of_mentions'] = pd.to_numeric(df['number_of_mentions'])
    df = df.dropna(subset=['covid_19_deaths', 'number_of_mentions'])
