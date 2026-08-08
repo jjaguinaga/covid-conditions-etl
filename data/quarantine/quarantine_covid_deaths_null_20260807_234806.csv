@@ -1,0 +1,2 @@
+start_date,end_date,condition_group,condition,icd10_codes,age_group,covid_19_deaths,number_of_mentions
+2021-01-01,2021-31-12,Sepsis,Sepsis,I46,0-24,,10
