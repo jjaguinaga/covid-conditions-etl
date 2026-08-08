@@ -53,7 +53,11 @@ class DataLoader:
       
       buffer.seek(0)
       
-      self.cur.copy_from(buffer, table_name, sep=',', columns=df.columns.tolist())
+      columns = ', '.join(df.columns)
+      
+      sql = f'COPY {table_name} ({columns}) FROM STDIN WITH (FORMAT CSV)'
+      
+      self.cur.copy_expert(sql, buffer)
       
       self.logger.info(f'Loaded {table_name}')
       
